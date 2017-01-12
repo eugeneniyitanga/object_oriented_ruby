@@ -2,10 +2,10 @@ class Products
 
   attr_accessor :product_name, :color, :price  
 
-  def initialize(product_hash)
-	@product_name = product_hash[ :product_name] 
-	@color = product_hash[ :color]
-	@price = product_hash[ :price]
+  def initialize(hash)
+	@product_name = hash[ :product_name] 
+	@color = hash[ :color]
+	@price = hash[ :price]
   end 
 
   def info 
