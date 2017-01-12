@@ -12,8 +12,7 @@ class Products
 	"A #{color} #{product_name} costs #{price}"
   end
 
-end
-
+end 
 
 product1 = Products.new({product_name: "Samsung", color: "white", price: 10000})
 product2 = Products.new({product_name: "tecno", color: "black", price: 60000})

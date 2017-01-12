@@ -27,15 +27,35 @@ class Manager < Employee
   def initialize(input_options)
     super
     @employees = input_options[:employees]
-  end
+  end 
 
   def send_report
     puts "Sending email..."
     # use email sending library...
     puts "Email sent!"
   end
+
+  def give_all_raises
+    @employees.each do |employee| 
+      puts employee.give_annual_raise
+    end 
+  end  
+
+  def fire_all_employees
+     @employees.each do |employee|
+       puts employee.active = false 
+    end
+  end 
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
-manager.print_info
-manager.send_report
+# manager.print_info
+# manager.send_report
+
+puts employee1.active 
+puts employee2.active 
+manager.fire_all_employees
+puts employee1.active 
+puts employee2.active 
+puts employee1.give_annual_raise
+puts employee2.give_annual_raise
