@@ -1,33 +1,25 @@
 class Products
 
-  def initialize(product_name, color, price)
-	@product_name = product_name 
-	@color = color 
-	@price = price
-  end 
+  attr_accessor :product_name, :color, :price  
 
-  def product_name
-	@product_name 
-  end 
-
-  def color 
-	@color 
-  end 
-
-  def price 
-	@price 
+  def initialize(product_hash)
+	@product_name = product_hash[ :product_name] 
+	@color = product_hash[ :color]
+	@price = product_hash[ :price]
   end 
 
   def info 
 	"A #{color} #{product_name} costs #{price}"
   end
-end
- 
 
-product1 = Products.new("Samsung", "white", 10000)
-product2 = Products.new("tecno", "black", 60000)
-product3 = Products.new("HTC_grand", "pink", 80000) 
+end
+
+
+product1 = Products.new({product_name: "Samsung", color: "white", price: 10000})
+product2 = Products.new({product_name: "tecno", color: "black", price: 60000})
+product3 = Products.new({product_name: "HTC_grand", color: "pink", price: 80000}) 
 
 puts product1.info 
 puts product2.info 
+product3.price = 50000
 puts product3.info 
